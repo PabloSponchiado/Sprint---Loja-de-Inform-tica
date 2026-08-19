@@ -1,6 +1,6 @@
 import Produto from "../model/Produto.js";
 import { type Request, type Response } from "express";
-import type { ProdutoDTO } from "../model/Produto.js";
+import type ProdutoDTO from "../interface/ProdutoDTO.js";
 
 class ProdutoController extends Produto {
 
