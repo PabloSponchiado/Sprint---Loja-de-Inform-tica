@@ -3,26 +3,9 @@
 // método estático para CRUD e um toDTO privado para mapear linhas do banco.
 
 import { DatabaseModel } from "./DatabaseModel.js";
+import type ProdutoDTO from "../interface/ProdutoDTO.js";
 
 const database = new DatabaseModel().pool;
-
-// DTO simples para transportar dados de produto
-export interface ProdutoDTO {
-    id_produto: number;
-    id_categoria: number;
-    codigo: string;
-    nome: string;
-    descricao: string | null;
-    preco_unitario: number;
-    quantidade_disponivel: number;
-    quantidade_minima: number;
-    ativo: boolean;
-    data_cadastro: Date;
-    categoria?: {
-        id_categoria: number;
-        nome: string | null;
-    } | null;
-}
 
 class Produto {
 
