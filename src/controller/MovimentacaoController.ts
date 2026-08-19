@@ -1,6 +1,6 @@
 import Movimentacao from "../model/Movimentacao.js";
 import { type Request, type Response } from "express";
-import type { MovimentacaoDTO } from "../model/Movimentacao.js";
+import type MovimentacaoDTO from "../interface/MovimentacaoDTO.js";
 
 class MovimentacaoController extends Movimentacao {
     static async todos(req: Request, res: Response) {
