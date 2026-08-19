@@ -1,11 +1,7 @@
 import { DatabaseModel } from "./DatabaseModel.js";
+import type CategoriaDTO from "../interface/CategoriaDTO.js";
 
 const database = new DatabaseModel().pool;
-
-export interface CategoriaDTO {
-    id_categoria: number;
-    nome: string;
-}
 
 class Categoria {
     private id_categoria: number = 0;
