@@ -1,6 +1,6 @@
 import Categoria from "../model/Categoria.js";
 import { type Request, type Response } from "express";
-import type { CategoriaDTO } from "../model/Categoria.js";
+import type CategoriaDTO from "../interface/CategoriaDTO.js";
 
 class CategoriaController extends Categoria {
     static async todos(req: Request, res: Response) {
