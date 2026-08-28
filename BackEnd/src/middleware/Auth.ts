@@ -39,8 +39,10 @@ export class Auth {
         const querySelectUser = `SELECT id_usuario, nome, email, senha, role FROM usuario WHERE email=$1 AND senha=$2;`;
 
         try {
+            console.log('[Auth] Tentando autenticar:', { email, senha: senha ? '***' : undefined });
             // faz a requisição ao banco de dados
             const queryResult = await database.query(querySelectUser, [email, senha]);
+            console.log('[Auth] queryResult:', queryResult.rowCount);
 
             // verifica se a quantidade de linhas retornada foi diferente de 0
             // se foi, quer dizer que o email e senha fornecidos são iguais aos do banco de dados
@@ -65,8 +67,9 @@ export class Auth {
             }
             // verifica possíveis erros durante a requisição
         } catch (error) {
-            console.log(`Erro no modelo: ${error}`);
-            return res.status(500).json({ message: "Erro interno do servidor" });
+            console.error('[Auth] Erro na autenticação:', error);
+            const message = error instanceof Error ? error.message : 'Erro interno do servidor';
+            return res.status(500).json({ message, error: message });
         }
     }
 
