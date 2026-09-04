@@ -199,8 +199,8 @@ export function ListagemPage({ tipo }: { tipo: 'produtos' | 'categorias' | 'movi
                     <td>{produto.ativo ? 'Ativo' : 'Inativo'}</td>
                     <td>
                       <Link to={`/detalhes/produtos/${produto.id_produto}`}>Detalhes</Link>
-                      <button type="button" onClick={() => abrirEdicao(produto)}>Editar</button>
-                      <button type="button" onClick={() => remover(produto.id_produto)}>Excluir</button>
+                      <button type="button" className="action-button action-edit" onClick={() => abrirEdicao(produto)}>Editar</button>
+                      <button type="button" className="action-button action-delete" onClick={() => remover(produto.id_produto)}>Excluir</button>
                     </td>
                   </tr>
                 ))}
@@ -211,8 +211,8 @@ export function ListagemPage({ tipo }: { tipo: 'produtos' | 'categorias' | 'movi
                     <td>{categoria.nome}</td>
                     <td>
                       <Link to={`/detalhes/categorias/${categoria.id_categoria}`}>Detalhes</Link>
-                      <button type="button" onClick={() => abrirEdicao(categoria)}>Editar</button>
-                      <button type="button" onClick={() => remover(categoria.id_categoria)}>Excluir</button>
+                      <button type="button" className="action-button action-edit" onClick={() => abrirEdicao(categoria)}>Editar</button>
+                      <button type="button" className="action-button action-delete" onClick={() => remover(categoria.id_categoria)}>Excluir</button>
                     </td>
                   </tr>
                 ))}
