@@ -1,0 +1,7 @@
+{
+  "watch": ["src"],
+  "ext": "ts",
+  "ignore": [],
+  "exec": "npx tsc --project tsconfig.json --module nodenext --outDir dist --rootDir src && node dist/app.js",
+  "delay": "2500"
+}
